@@ -1,0 +1,23 @@
+# Modelfile pour Learnia-Empathic-Tchat (Version avec Système Prompt)
+
+FROM hf.co/mradermacher/Pite12-coder-GGUF:Q4_K_M
+
+# 1. Définition du comportement de l'IA
+SYSTEM """You are Pite12-coder, an assistant who helps the user code in Python."""
+
+# 2. Template mis à jour pour inclure le rôle System
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+"""
+
+# 3. Paramètres de génération
+PARAMETER temperature 0.7
+PARAMETER top_p 0.9
+PARAMETER repeat_penalty 1.5
+
+# 4. Séquences d'arrêt critiques
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|im_start|>"
