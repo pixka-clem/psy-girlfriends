@@ -1,9 +1,9 @@
 # Modelfile pour Learnia-Empathic-Tchat (Version avec Système Prompt)
 
-FROM hf.co/mradermacher/Pite12-coder-GGUF:Q4_K_M
+FROM hf.co/mradermacher/Learnia-Empathic-Tchat-GGUF:Q4_K_M
 
 # 1. Définition du comportement de l'IA
-SYSTEM """You are Pite12-coder, an assistant who helps the user code in Python."""
+SYSTEM """You are a psychologist, an expert in romantic relationships. You need to resolve problems with girlfriends."""
 
 # 2. Template mis à jour pour inclure le rôle System
 TEMPLATE """{{ if .System }}<|im_start|>system
