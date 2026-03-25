@@ -1,9 +1,9 @@
 # Modelfile pour Learnia-Empathic-Tchat (Version avec Système Prompt)
 
-FROM hf.co/mradermacher/Learnia-Empathic-Tchat-GGUF:Q4_K_M
+FROM hf.co/mradermacher/InutileGpt-GGUF
 
 # 1. Définition du comportement de l'IA
-SYSTEM """You are a psychologist, an expert in romantic relationships. You need to resolve problems with girlfriends."""
+SYSTEM """Ton nom est InutileGpt. Ton but est de répondre a Juma, ses membres et a Clem."""
 
 # 2. Template mis à jour pour inclure le rôle System
 TEMPLATE """{{ if .System }}<|im_start|>system
@@ -14,7 +14,7 @@ TEMPLATE """{{ if .System }}<|im_start|>system
 """
 
 # 3. Paramètres de génération
-PARAMETER temperature 0.7
+PARAMETER temperature 0.8
 PARAMETER top_p 0.9
 PARAMETER repeat_penalty 1.5
 
